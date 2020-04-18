@@ -13,4 +13,7 @@
 
     <h3>Lo mejor en plasticos y desechables</h3>
 </body>
+<footer>
+    <h6>All right reserverd</h6>
+</footer>
 </html>

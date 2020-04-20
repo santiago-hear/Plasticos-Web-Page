@@ -9,9 +9,33 @@
     </head>
     <body>
     <div class="container">
-        <header class="jumbotron text-center cab">
-            <img src="Images/fuente 5.png" alt="imagen de cabecera">
+        <header class="jumbotron mainheader">
+            <img src="Images/logo_final.png" alt="logo">
         </header>
+    </div>
+    <div class="container">
+        <nav class="nav nav-pills nav-fill mainnav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Desechables</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Bolsas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Plásticos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Alimentos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Otros</a>
+                </li>
+            </ul>
+        </nav>
     </div>
         <script href="styles/jsb/jquery-3.5.0.min.js"></script>
         <script href="styles/jsb/popper.min.js"></script>

@@ -1,4 +1,10 @@
-.cab
+.mainheader, .mainnav
 {
-    background-color: #023436;
+    background-color: #E4E6C3;
+}
+
+.mainheader img
+{
+    max-width: 25em;
+    max-height: 25em
 }

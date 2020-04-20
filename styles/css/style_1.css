@@ -1,3 +1,7 @@
+body
+{
+    background-color: #F7F7F2;
+}
 .mainheader, .mainnav
 {
     background-color: #E4E6C3;
@@ -6,5 +10,15 @@
 .mainheader img
 {
     max-width: 25em;
-    max-height: 25em
+    max-height: 25em;
+}
+
+.mainnav ul li a
+{
+    color: #222725;
+}
+
+.nvi:hover
+{
+    color: #899878;
 }

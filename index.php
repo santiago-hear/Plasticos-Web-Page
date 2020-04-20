@@ -14,25 +14,25 @@
         </header>
     </div>
     <div class="container">
-        <nav class="nav nav-pills nav-fill mainnav">
-            <ul class="navbar-nav">
+        <nav class="navbar navbar-expand-lg justify-content-center mainnav">
+            <ul class="nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Inicio</a>
+                    <a class="nav-link nvi" href="#">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Desechables</a>
+                    <a class="nav-link nvi" href="#">Desechables</a>                 
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Bolsas</a>
+                    <a class="nav-link nvi" href="#">Bolsas</a>               
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Plásticos</a>
+                    <a class="nav-link nvi" href="#">Plásticos</a>  
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Alimentos</a>
+                    <a class="nav-link nvi" href="#">Alimentos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Otros</a>
+                    <a class="nav-link nvi" href="#">Otros</a>
                 </li>
             </ul>
         </nav>

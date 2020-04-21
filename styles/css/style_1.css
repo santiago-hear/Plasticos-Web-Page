@@ -1,24 +1,53 @@
+/* Color de fondo */
 body
 {
     background-color: #F7F7F2;
 }
-.mainheader, .mainnav
+/* Color de cada seccion*/
+.mainheader, .mainnav, .searchnav, .mainnav ul li a
 {
     background-color: #E4E6C3;
+    color: #222725;
 }
-
+/* tamaño de la imagen principal */
 .mainheader img
 {
+    margin-bottom: 20px;
+    margin-top: 20px;
     max-width: 25em;
     max-height: 25em;
 }
-
-.mainnav ul li a
+/* Cambios de color al pasar el mouse */
+.nvi:hover
 {
+    background-color: #899878;
+    border-radius: 0.6em;
+}
+/* Color del boton de busqueda */
+.searchbtn
+{
+    background-color: #222725;
+    color: #E4E6C3;
+}
+/* Color al pasar el mouse boton */
+.searchbtn:hover
+{
+    background-color: #899878;
     color: #222725;
 }
 
-.nvi:hover
+.list
 {
-    color: #899878;
+    border-top: 1px solid #222725;
+    border-bottom: 1px solid #222725;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.searchnav div
+{
+    margin-top: 10px;
+    margin-bottom: 20px;
+    margin-left: 1em;
+    margin-right: 1em;
 }

@@ -1,53 +1,87 @@
-/* Color de fondo */
+/* Color de fondo general */
 body
 {
-    background-color: #F7F7F2;
+    background-color: #222725;
 }
 /* Color de cada seccion*/
-.mainheader, .mainnav, .searchnav, .mainnav ul li a
-{
-    background-color: #E4E6C3;
-    color: #222725;
-}
-/* tamaño de la imagen principal */
-.mainheader img
-{
-    margin-bottom: 20px;
-    margin-top: 20px;
-    max-width: 25em;
-    max-height: 25em;
-}
-/* Cambios de color al pasar el mouse */
-.nvi:hover
-{
-    background-color: #899878;
-    border-radius: 0.6em;
-}
-/* Color del boton de busqueda */
-.searchbtn
+.mainheader, .mainnav, .searchnav, .mainheader ul li a
 {
     background-color: #222725;
     color: #E4E6C3;
 }
-/* Color al pasar el mouse boton */
-.searchbtn:hover
+.mainheader
+{
+    padding-left: 3em;
+    padding-right: 3em;
+}
+/* Configuracion Cabecero*/
+.menuheader
+{
+    display: inline-block;
+}
+/* tamaño del logotipo */
+.mainheader nav img
+{
+    max-width: 12em;
+    max-height: 12em;
+}
+/* Configuracion menu categorias*/
+.list
+{
+    border-top: 1.5px solid #E4E6C3;
+    border-bottom: 1.5px solid #E4E6C3;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.navform
+{
+    margin-right: 3em;
+}
+/* hover del menu categorias */
+.nvi:hover
+{
+    background-color: #899878;
+    color: #222725;
+    border-radius: 0.6em;
+}
+/* Color del boton de busqueda e incio de sesion */
+.searchbtn, .sign_in_btn
+{
+    background-color: #222725;
+    color: #E4E6C3;
+}
+/* hover boton de busqueda e incio de sesion */
+.searchbtn:hover,.sign_in_btn:hover
 {
     background-color: #899878;
     color: #222725;
 }
-
-.list
-{
-    border-top: 1px solid #222725;
-    border-bottom: 1px solid #222725;
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
+/* configuracion barra de busqueda */
 .searchnav div
 {
     margin-top: 10px;
     margin-bottom: 20px;
     margin-left: 1em;
     margin-right: 1em;
+}
+/* COnfiguracion del banner*/
+.banner
+{
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 1em; 
+    opacity: 0.7;
+    background-color: #363537;
+}
+
+.msg a
+{
+    font-weight: bold;
+    color: black;
+}
+
+.msg a:hover
+{
+    text-decoration: none;
+    color: #222725;
 }

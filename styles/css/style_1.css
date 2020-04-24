@@ -1,7 +1,7 @@
 /* Color de fondo general */
 body
 {
-    background-color: #222725;
+    background-color: #F7F7F2;
 }
 /* Color de cada seccion*/
 .mainheader, .mainnav, .searchnav, .mainheader ul li a
@@ -14,11 +14,11 @@ body
     padding-left: 3em;
     padding-right: 3em;
 }
-/* Configuracion Cabecero*/
+/* Configuracion Cabecero
 .menuheader
 {
     display: inline-block;
-}
+}*/
 /* tamaño del logotipo */
 .mainheader nav img
 {
@@ -33,16 +33,22 @@ body
     padding-top: 10px;
     padding-bottom: 10px;
 }
+/*
 .navform
 {
     margin-right: 3em;
 }
+*/
 /* hover del menu categorias */
 .nvi:hover
 {
     background-color: #899878;
     color: #222725;
     border-radius: 0.6em;
+}
+.signdiv
+{
+    padding-right: 5em;
 }
 /* Color del boton de busqueda e incio de sesion */
 .searchbtn, .sign_in_btn
@@ -59,27 +65,23 @@ body
 /* configuracion barra de busqueda */
 .searchnav div
 {
-    margin-top: 10px;
-    margin-bottom: 20px;
-    margin-left: 1em;
-    margin-right: 1em;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 5em;
 }
-/* COnfiguracion del banner*/
+/* Configuracion del banner*/
 .banner
 {
-    padding-left: 10%;
-    padding-right: 10%;
-    padding-top: 1em; 
-    opacity: 0.7;
-    background-color: #363537;
+    padding-top: 0em;
+    opacity: 0.8;
 }
-
+/* texto del banner */
 .msg a
 {
     font-weight: bold;
     color: black;
 }
-
+/* hover del texto del banner */
 .msg a:hover
 {
     text-decoration: none;

@@ -1,44 +1,38 @@
 /* Color de fondo general */
 body
 {
-    background-color: #F7F7F2;
+    background-color: mintcream;
 }
 /* Color de cada seccion*/
-.mainheader, .mainnav, .searchnav, .mainheader ul li a
+.mainheader, .mainnav, .searchnav, .mainheader ul li a, .dropdiv, .signin-form
 {
     background-color: #222725;
     color: #E4E6C3;
 }
+.register a
+{
+    color: #E4E6C3;
+}
 .mainheader
 {
-    padding-left: 3em;
-    padding-right: 3em;
+    padding-left: 4%;
+    padding-right: 6%;
 }
-/* Configuracion Cabecero
-.menuheader
-{
-    display: inline-block;
-}*/
 /* tamaño del logotipo */
-.mainheader nav img
+.mainheader a img
 {
     max-width: 12em;
     max-height: 12em;
 }
-/* Configuracion menu categorias*/
+/* Configuracion menu*/
 .list
 {
     border-top: 1.5px solid #E4E6C3;
     border-bottom: 1.5px solid #E4E6C3;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    margin-left: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
-/*
-.navform
-{
-    margin-right: 3em;
-}
-*/
 /* hover del menu categorias */
 .nvi:hover
 {
@@ -46,44 +40,58 @@ body
     color: #222725;
     border-radius: 0.6em;
 }
-.signdiv
+.dropdiv
 {
-    padding-right: 5em;
+    border: 1px solid #E4E6C3;
 }
-/* Color del boton de busqueda e incio de sesion */
-.searchbtn, .sign_in_btn
+/* Color de los botones*/
+.searchbtn, .sign_in_btn, .mybtn, .btns
 {
     background-color: #222725;
     color: #E4E6C3;
 }
+.searchbtn
+{
+    margin-left: 2%;
+}
 /* hover boton de busqueda e incio de sesion */
-.searchbtn:hover,.sign_in_btn:hover
+.searchbtn:hover,.sign_in_btn:hover,.mybtn:hover, .btns:hover
 {
     background-color: #899878;
     color: #222725;
 }
 /* configuracion barra de busqueda */
-.searchnav div
+.searchnav
 {
-    padding-top: 10px;
-    padding-bottom: 20px;
-    padding-left: 5em;
-}
-/* Configuracion del banner*/
-.banner
-{
-    padding-top: 0em;
-    opacity: 0.8;
+    margin-top: 104px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 5%;
 }
 /* texto del banner */
-.msg a
+.msg
 {
-    font-weight: bold;
     color: black;
 }
-/* hover del texto del banner */
-.msg a:hover
+/* boton del banner */
+.msg button
 {
-    text-decoration: none;
-    color: #222725;
+    color: #E4E6C3;
+    background-color: black;
+}
+/* hover del texto del banner */
+.msg button:hover
+{
+    background-color: #222725;
+    color: #E4E6C3;
+}
+
+.start
+{
+    background-color: mintcream;
+}
+
+.boxproduct
+{
+    background-color: azure;
 }

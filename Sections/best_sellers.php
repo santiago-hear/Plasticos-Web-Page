@@ -1,6 +1,6 @@
 <div class="album">
-    <h1 class="jumbotron-heading text-center py-5">Los más vendidos</h1>
-    <div class="container">
+    <h1 class="display-3 text-center">Los más vendidos</h1>
+    <div class="container my-5">
         <div class="row">
             <?php for ($i=0; $i < 6; $i++):?>
             <div class="col-md-4">
@@ -14,9 +14,9 @@
                         </p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group ">
-                                <button type="button" class="btn btn-sm btn-outline-secondary btns">Ver</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary btns">Editar</button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary btns">Comentar</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary my-btn">Ver</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary my-btn">Editar</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary my-btn">Comentar</button>
                             </div>
                             <small class="text-muted">9 mins</small>
                         </div>

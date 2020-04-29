@@ -9,11 +9,11 @@
             a tu compra o si tienes dudas de tu compra, puedes
             dejar tu mensaje y responderemos lo mas pronto posible.
         <p>
-        <a href="#" class="btn mybtn my-2">Registrarse</a>
+        <a href="index.php?section=register" class="btn my-btn my-2">Registrarse</a>
         <p class="lead text-muted">
             Te invitamos a realizar tu pedido a domicilio o visítanos
             en la plaza de mercado, ingresa a nuestra ubicacion.
         </p>
-        <a href="#" class="btn mybtn my-2">Ubicación</a>
+        <a href="index.php?section=directions" class="btn my-btn my-2">Ubicación</a>
     </div>
 </section>

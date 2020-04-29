@@ -4,10 +4,13 @@ body
     background-color: mintcream;
 }
 /* Color de cada seccion*/
-.mainheader, .mainnav, .searchnav, .mainheader ul li a, .dropdiv, .signin-form
+header , .mainnav, .searchnav, .mainheader ul li a, .dropdiv
 {
     background-color: #222725;
     color: #E4E6C3;
+    -moz-transition:all ease .8s; /*Aplicamos una ligera transición*/
+    -webkit-transition:all ease .8s ;
+    transition:all ease .8s;
 }
 .register a
 {
@@ -15,11 +18,12 @@ body
 }
 .mainheader
 {
-    padding-left: 4%;
-    padding-right: 6%;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin-top: 88px;
 }
 /* tamaño del logotipo */
-.mainheader a img
+.searchnav a img
 {
     max-width: 12em;
     max-height: 12em;
@@ -45,28 +49,27 @@ body
     border: 1px solid #E4E6C3;
 }
 /* Color de los botones*/
-.searchbtn, .sign_in_btn, .mybtn, .btns
+.my-btn
 {
     background-color: #222725;
     color: #E4E6C3;
+    -moz-transition:all ease .8s; /*Aplicamos una ligera transición*/
+    -webkit-transition:all ease .8s ;
+    transition:all ease .8s;
 }
 .searchbtn
 {
     margin-left: 2%;
+    -moz-transition:all ease .8s; /*Aplicamos una ligera transición*/
+    -webkit-transition:all ease .8s ;
+    transition:all ease .8s;
 }
 /* hover boton de busqueda e incio de sesion */
-.searchbtn:hover,.sign_in_btn:hover,.mybtn:hover, .btns:hover
+.my-btn:hover
 {
     background-color: #899878;
     color: #222725;
-}
-/* configuracion barra de busqueda */
-.searchnav
-{
-    margin-top: 104px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 5%;
+    border-color: black;
 }
 /* texto del banner */
 .msg
@@ -84,6 +87,7 @@ body
 {
     background-color: #222725;
     color: #E4E6C3;
+    
 }
 
 .start
@@ -96,7 +100,33 @@ body
     background-color: azure;
 }
 
-.register
+.mapframe
 {
+    height: 500px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.registerbtn:disabled,
+.registerbtn[disabled]{
+    background-color: #222725;
+    color: #e4e6c3;
+    opacity: 0.5;
+    border-color: black;
+}
+/* texto de campos obligatorios */
+.ob
+{
+    filter: alpha(opacity=0); /*Opacidad Para IE */
+    opacity: 0; /*Inicialmente transparente */
     color: #222725;
+    -moz-transition:all ease .8s; /*Aplicamos una ligera transición*/
+    -webkit-transition:all ease .8s ;
+    transition:all ease .8s;
+}
+/* hover asterisco texto de campos obligatorios */
+.ast:hover .ob
+{
+    filter: alpha(opacity=70);
+    opacity: .7;
 }

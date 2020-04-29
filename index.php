@@ -16,7 +16,7 @@
         <header class="px-5">
             <nav class="navbar navbar-expand-md mainheader">
                 <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="col-sm-1"></div>
+                    <div class="col-sm-2"></div>
                     <ul class="navbar-nav mr-auto list">
                         <li class="nav-item">
                             <a class="nav-link nvi" href="index.php?section=about_us">Conócenos</a>
@@ -42,7 +42,7 @@
                     </ul>
                     <form class="form-inline col-sm-3" action="index.php" method="GET">
                         <input type="hidden" name="section" value="login">
-                        <button class="form-control my-btn" type="submit">Inicia Sesión</button>
+                        <button class="px-4 form-control my-btn" type="submit">Inicia Sesión</button>
                         <label class="px-3 register"><a href="index.php?section=register">o Regístrate.</a></label>
                     </form>
                 </div>

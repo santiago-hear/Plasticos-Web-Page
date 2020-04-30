@@ -1,4 +1,4 @@
-<div class="container py-3">
+<div class="container py-5">
     <h1 class="display-3 text-center">Nuestra Ubicación</h1>
     <h4 class="text-muted text-center ">Plaza de Mercado</h4>
     <h4 class="text-muted text-center">Calle 22 # 16 - 23 local NNN</h4>

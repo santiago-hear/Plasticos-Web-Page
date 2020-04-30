@@ -1,4 +1,4 @@
-<div class="album">
+<div class="album container py-5">
     <h1 class="display-3 text-center">Los más vendidos</h1>
     <div class="container my-5">
         <div class="row">

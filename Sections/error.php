@@ -1,4 +1,4 @@
-<div class='container'>
+<div class='container py-5'>
     <h1 class="display-3 text-center">LO SENTIMOS!</h1>
     <section class="py-4">
     <h1 class="display-1 text-center">:(</h1>

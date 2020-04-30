@@ -1,4 +1,4 @@
-<div class="album">
+<div class="album container py-5">
     <h1 class="jumbotron-heading text-center py-5">Category Name</h1>
     <div class="container">
         <div class="row">

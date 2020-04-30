@@ -57,44 +57,36 @@
                 </div>
             </nav>
         </header>
+        <main>
         <?php
             switch ($section) {
                 case "home":
-                    echo "<main>";
                     include("Sections/banner.php");
                     include("Sections/welcome_msg.php");
                     include("Sections/best_sellers.php");
                     break;
                 case 'categories':
-                    echo "<main class='container py-5'>";
                     include("Sections/best_sellers.php");
                     break;
                 case 'about_us':
-                    echo "<main class='container py-5'>";
                     include("Sections/about_us.php");
                     break;
                 case 'login':
-                    echo "<main class='container py-5'>";
                     include("Sections/login.php");
                     break;
                 case 'register':
-                    echo "<main class='container py-5'>";
                     include("Sections/register.php");
                     break;
                 case 'directions':
-                    echo "<main class='container py-5'>";
                     include("Sections/directions.php");
                     break;
                 case 'contact':
-                    echo "<main class='container py-5'>";
                     include("Sections/contact.php");
                     break;
                 case 'profile':
-                    echo "<main class='container py-5'>";
                     include("Sections/profile.php");
                     break;
                 default:
-                echo "<main class='container py-5'>";
                 include("Sections/error.php");
                     break;
             }

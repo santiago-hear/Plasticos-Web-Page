@@ -30,13 +30,12 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle nvi" data-toggle="dropdown">Productos</a>
                             <div class="dropdown-menu dropdiv" >
-                                <a class="dropdown-item nvi" href="index.php?section=categories">Todas las categorias</a>
-                                <a class="dropdown-item nvi" href="index.php?category_id=1">Envoltorios</a>
-                                <a class="dropdown-item nvi" href="index.php?category_id=2">Desechables</a>
-                                <a class="dropdown-item nvi" href="index.php?category_id=3">Alimentos</a>
-                                <a class="dropdown-item nvi" href="index.php?category_id=4">Fibras</a>
-                                <a class="dropdown-item nvi" href="index.php?category_id=5">Aseo</a>
-                                <a class="dropdown-item nvi" href="index.php?category_id=6">Bolsas</a>
+                                <a class="dropdown-item nvi" href="index.php?section=categories&category_id=1">Envoltorios</a>
+                                <a class="dropdown-item nvi" href="index.php?section=categories&category_id=2">Desechables</a>
+                                <a class="dropdown-item nvi" href="index.php?section=categories&category_id=3">Alimentos</a>
+                                <a class="dropdown-item nvi" href="index.php?section=categories&category_id=4">Fibras</a>
+                                <a class="dropdown-item nvi" href="index.php?section=categories&category_id=5">Aseo</a>
+                                <a class="dropdown-item nvi" href="index.php?section=categories&category_id=6">Bolsas</a>
                             </div>
                         </li>
                     </ul>

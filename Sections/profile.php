@@ -3,6 +3,7 @@
 ?>
 <div class="container py-5">
     <h1 class="display-3 text-center">Perfil</h1>
+    <hr>
     <div class="row py-5">
         <div class="col-sm-3">
             <div class="card">
@@ -13,12 +14,23 @@
 
                     </p>
                 </div>
-                <ul class="list-group list-group-flush pagination">
-                    <li class="list-group-item"><a href="index.php?section=profile&site=general_info">Información Personal</a></li>
-                    <li class="list-group-item"><a href="index.php?section=profile&site=change_photo">Cambiar mi foto</a></li>
-                    <li class="list-group-item"><a href="index.php?section=profile&site=comments">Mis comentarios</a></li>
-                    <li class="list-group-item"><a href="index.php?section=profile&site=favorites">Mis favoritos</a></li>
-                    <li class="list-group-item"><a href="" style="color:red;">Cerrar Sesión</a></li>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item general_info">
+                        <a class="enl" href="index.php?section=profile&site=general_info">Información Personal</a>
+                    </li>
+                    <li class="list-group-item change_photo">
+                        <a class="enl" href="index.php?section=profile&site=change_photo">Cambiar mi foto</a>
+                    </li>
+                    <li class="list-group-item comments">
+                        <a class="enl" href="index.php?section=profile&site=comments">Mis comentarios</a>
+                    </li>
+                    <li class="list-group-item favorites">
+                        <a class="enl" href="index.php?section=profile&site=favorites">Mis favoritos</a>
+                    </li>
+                    <li class="list-group-item">
+                        <a href="" style="color:red;">Cerrar Sesión</a>
+                    </li>
+                    
                 </ul>
             </div>
         </div>

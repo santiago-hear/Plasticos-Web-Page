@@ -90,6 +90,20 @@ header , .mainnav, .searchnav, .mainheader ul li a, .dropdiv
     
 }
 
+.enl
+{
+    font-weight: bold;
+    color: #222725;
+    -moz-transition:all ease .8s; /*Aplicamos una ligera transición*/
+    -webkit-transition:all ease .8s ;
+    transition:all ease .8s;
+}
+.enl:hover
+{
+    text-decoration: none;
+    color: #3F5E5A;
+}
+
 .start
 {
     background-color: mintcream;
@@ -129,4 +143,11 @@ header , .mainnav, .searchnav, .mainheader ul li a, .dropdiv
 {
     filter: alpha(opacity=70);
     opacity: .7;
+}
+
+.profile_photo img
+{
+    margin-top: 20px;
+    max-width: 70%;
+    max-width: 70%;
 }

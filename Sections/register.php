@@ -66,29 +66,35 @@
             <label for="address">Dirección:</label>
             <input type="text" class="form-control" id="address" placeholder="Carrera 10 # 10-10">
         </div>
-        <div class="form-group">
-            <label for="gendertype">Genero: </label>
-            <div class="form">
-                <div class="form-check-inline mx-3">
-                    <label for="gendertype" class="form-check-label">
-                        <input type="radio" class="form-check-input" value="M" name="gender" id="gendertype" checked>
-                        Masculino
-                    </label>
+        <fieldset class="form-group">
+            <div class="row">
+                <legend class="col-form-label col-sm-1 pt-0">Genero:</legend>
+                <div class="col-sm-5">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="genderM" value="M" checked>
+                        <label class="form-check-label" for="genderM">
+                            Masculino
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="gender" id="genderF" value="F">
+                        <label class="form-check-label" for="genderF">
+                            Femenino
+                        </label>
+                    </div>
+                    <div class="form-check disabled">
+                        <input class="form-check-input" type="radio" name="gender" id="genderO" value="O">
+                        <label class="form-check-label" for="genderO">
+                            Otro
+                        </label>
+                    </div>
                 </div>
-                <div class="form-check-inline mx-3">
-                    <label for="gendertype" class="form-check-label">
-                        <input type="radio" class="form-check-input" value="F" name="gender" id="gendertype">
-                        Femenino
-                    </label>
-                </div>
-                <div class="form-check-inline mx-3">
-                    <label for="gendertype" class="form-check-label">
-                        <input type="radio" class="form-check-input" value="O" name="gender" id="gendertype">
-                        Otro
-                    </label>
+                <div class="col-sm-6">
+                    <label for="address">Fecha de Nacimiento:</label>
+                    <input type="date" class="form-control">
                 </div>
             </div>
-        </div>
+        </fieldset>
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="state">Departamento:</label>

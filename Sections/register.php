@@ -115,13 +115,24 @@
         </div>
         <div class="form-group">
             <label for="photo">Foto:</label>
-            <input type="file" class="form-control" id="photo">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text">Foto</span>
+                </div>
+                <div class="custom-file">
+                    <input type="file" class="custom-file-input" id="photo">
+                    <label class="custom-file-label" for="photo">Seleccionar Archivo</label>
+                </div>
+            </div>
         </div>
         <div class="form-group">
             <div class="form-check">
                 <label class="form-check-label">
                     <input type="checkbox" class="form-check-input" value="1" onclick="javascript:ValidateCheck(this);">
                     Acepto el tratamiento de datos personales.
+                </label>
+                <label class="ast" style="color:red;">*
+                    <span class="ob">Campo Obligatorio</span>
                 </label>
                 <div class="invalid-feedback">
                     Debes aceptar los terminos

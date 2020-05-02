@@ -14,7 +14,7 @@
                         </p>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group ">
-                                <button type="button" class="btn btn-sm btn-outline-secondary my-btn">Ver</button>
+                                <button type="button" onclick="window.location.href='index.php?section=view'" class="btn btn-sm btn-outline-secondary my-btn">Ver</button>
                                 <button type="button" class="btn btn-sm btn-outline-secondary my-btn">Editar</button>
                                 <button type="button" class="btn btn-sm btn-outline-secondary my-btn">Comentar</button>
                             </div>

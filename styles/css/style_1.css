@@ -4,7 +4,7 @@ body
     background-color: mintcream;
 }
 /* Color de cada seccion*/
-header , .mainnav, .searchnav, .mainheader ul li a, .dropdiv
+header , .searchnav, .mainheader ul li a, .dropdiv
 {
     background-color: #222725;
     color: #E4E6C3;
@@ -12,30 +12,26 @@ header , .mainnav, .searchnav, .mainheader ul li a, .dropdiv
     -webkit-transition:all ease .8s ;
     transition:all ease .8s;
 }
+.searchform
+{
+    padding-inline-start: 5%;
+}
+
 .register a
 {
     color: #E4E6C3;
 }
 .mainheader
 {
-    padding-top: 20px;
-    padding-bottom: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     margin-top: 88px;
 }
 /* tamaño del logotipo */
 .searchnav a img
 {
-    max-width: 12em;
-    max-height: 12em;
-}
-/* Configuracion menu*/
-.list
-{
-    border-top: 1.5px solid #E4E6C3;
-    border-bottom: 1.5px solid #E4E6C3;
-    margin-left: auto;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    max-width: 10em;
+    max-height: 10em;
 }
 /* hover del menu categorias */
 .nvi:hover
@@ -149,5 +145,5 @@ header , .mainnav, .searchnav, .mainheader ul li a, .dropdiv
 {
     margin-top: 20px;
     max-width: 70%;
-    max-width: 70%;
+    max-height: 70%;
 }

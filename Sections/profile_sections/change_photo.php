@@ -4,10 +4,14 @@
         El formato de la foto debe ser PNG.
     </p>
 </div>
-<div>
-    <form action="">
-        <input type="file" class="form-control">
-    </form>
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text">Foto</span>
+    </div>
+    <div class="custom-file">
+        <input type="file" class="custom-file-input" id="photo">
+        <label class="custom-file-label" for="photo">Seleccionar Archivo</label>
+    </div>
 </div>
 <div class="profile_photo text-center">
     <h4 class="text-center mt-4">Foto actual</h4>

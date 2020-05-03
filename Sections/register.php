@@ -11,10 +11,16 @@
                 <div class="invalid-feedback">
                     Campo Obligatorio
                 </div>
+                <div class="valid-feedback">
+                    ¡Bien hecho!
+                </div>
             </div>
             <div class="form-group col-md-6">
                 <label for="lastname">Apellidos: </label>
                 <input type="text" class="form-control" id="lastname" placeholder="¿Cúales son tus apellidos?">
+                <div class="valid-feedback">
+                    ¿No te gusta tu apellido?, ¡no lo pongas!
+                </div>
             </div>
         </div>
         <div class="form-row">
@@ -23,9 +29,9 @@
                 <label class="ast" style="color:red;">*
                     <span class="ob">Campo Obligatorio</span>
                 </label>
-                <input type="email" class="form-control" id="mail" name="mail" placeholder="ejemplo@ejemplo.com" required>
+                <input type="email" onchange="verify_mail()" class="form-control" id="mail" name="mail" placeholder="ejemplo@ejemplo.com" required>
                 <div class="invalid-feedback">
-                    Campo Obligatorio
+                    No ingresaste tu correo.
                 </div>
             </div>
             <div class="form-group col-md-6">
@@ -33,9 +39,10 @@
                 <label class="ast" style="color:red;">*
                     <span class="ob">Campo Obligatorio</span>
                 </label>
-                <input type="email" class="form-control" id="mailconfirm" name="mailconfirm" placeholder="ejemplo@ejemplo.com" required>
+                <input type="email" onchange="verify_mail()" class="form-control" id="mailconfirm" name="mailconfirm" placeholder="ejemplo@ejemplo.com" required>
+                <span id="errormail"></span>
                 <div class="invalid-feedback">
-                    Campo Obligatorio
+                   No confirmaste tu correo.
                 </div>
             </div>
         </div>
@@ -45,10 +52,17 @@
                 <label class="ast" style="color:red;">*
                     <span class="ob">Campo Obligatorio</span>
                 </label>
-                <input type="password" class="form-control" id="paswd" name="paswd" placeholder="Contraseña" required>
-                <small id="paswd" class="text-muted">La contraseña debe tener por lo menos 8 Caracteres con 2 numeros</small>
+                <input type="password" onchange="verify_pswd()" class="form-control" id="paswd" name="paswd" placeholder="Contraseña" required>
+                <small id="paswd" class="text-muted">
+                    La contraseña debe tener al entre 8 y 16 caracteres, 
+                    al menos un dígito, al menos una minúscula y al menos una mayúscula.
+                    NO puede tener otros símbolos.
+                </small>
                 <div class="invalid-feedback">
-                    Campo Obligatorio
+                    No ingresaste una contraseña.
+                </div>
+                <div class="valid-feedback">
+                    ¡Bien hecho!.
                 </div>
             </div>
             <div class="form-group col-md-6">
@@ -56,15 +70,22 @@
                 <label class="ast" style="color:red;">*
                     <span class="ob">Campo Obligatorio</span>
                 </label>
-                <input type="password" class="form-control" id="paswdconfirm" name="paswdconfirm" placeholder="Confirmar Contraseña" required>
+                <input type="password" onchange="verify_pswd()" class="form-control" id="paswdconfirm" name="paswdconfirm" placeholder="Confirmar Contraseña" required>
+                <span id="errorpaswd"></span>
                 <div class="invalid-feedback">
-                    Campo Obligatorio
+                    No confirmaste tu contraseña
+                </div>
+                <div class="valid-feedback">
+                    ¡Bien hecho!.
                 </div>
             </div>
         </div>
         <div class="form-group">
             <label for="address">Dirección:</label>
             <input type="text" class="form-control" id="address" placeholder="Carrera 10 # 10-10">
+            <div class="valid-feedback">
+                Tal vez te guste poner tu dirección.
+            </div>
         </div>
         <fieldset class="form-group">
             <div class="row">
@@ -92,6 +113,9 @@
                 <div class="col-sm-6">
                     <label for="address">Fecha de Nacimiento:</label>
                     <input type="date" class="form-control">
+                    <div class="valid-feedback">
+                        ¡Bien hecho!
+                    </div>
                 </div>
             </div>
         </fieldset>
@@ -128,7 +152,7 @@
         <div class="form-group">
             <div class="form-check">
                 <label class="form-check-label">
-                    <input type="checkbox" class="form-check-input" value="1" onclick="javascript:ValidateCheck(this);">
+                    <input type="checkbox" class="form-check-input" id="terms" value="1" onclick="javascript:ValidateCheck(this);">
                     Acepto el tratamiento de datos personales.
                 </label>
                 <label class="ast" style="color:red;">*
@@ -149,6 +173,56 @@
     </form>
 </div>
 <script>
+    function verify_mail()
+    {
+        var email = document.getElementById('mail').value;
+        var emailconfirm = document.getElementById('mailconfirm').value;
+        var d = document.registerform;
+        if(email !== emailconfirm)
+        {
+            document.getElementById('errormail').innerHTML = "Los correos electrónicos deben ser iguales";
+            d.regbtn.disabled = true;
+        }
+        else
+        {
+            document.getElementById('errormail').innerHTML = "";
+            if(terms.checked==true){
+                d.regbtn.disabled = false;
+            }else{
+                d.regbtn.disabled = true;
+            }
+        }
+    }
+    function verify_pswd()
+    {
+        var password = document.getElementById('paswd').value;
+        var passwordconfirm = document.getElementById('paswdconfirm').value;
+        var d = document.registerform;
+        var expresion= /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
+        if(password !== passwordconfirm)
+        {
+            document.getElementById('errorpaswd').innerHTML = "las contraseñas deben ser iguales";
+            d.regbtn.disabled = true;
+        }
+        else
+        {
+            if (!expresion.test(password))
+            { 
+                document.getElementById("errorpaswd").innerHTML = "La contraseña no cumple con los requisitos";
+            }
+            else{
+                document.getElementById('errorpaswd').innerHTML = "";
+                document.getElementById('terms');
+                if(terms.checked==true){
+                    d.regbtn.disabled = false;
+                }else{
+                    d.regbtn.disabled = true;
+                }
+            }
+        }
+    }
+</script>
+<script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {
   'use strict';
@@ -159,8 +233,8 @@
     var validation = Array.prototype.filter.call(forms, function(form) {
       form.addEventListener('submit', function(event) {
         if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
+            event.preventDefault();
+            event.stopPropagation();
         }
         form.classList.add('was-validated');
       }, false);

@@ -147,3 +147,9 @@ header , .searchnav, .mainheader ul li a, .dropdiv
     max-width: 70%;
     max-height: 70%;
 }
+
+#errormail, #errorpaswd
+{
+    color: red;
+    font-size: 1em;
+}

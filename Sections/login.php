@@ -1,33 +1,36 @@
 <div class="container py-5">
     <h1 class="display-3 text-center">Inciar Sesión</h1>
-    <form class="needs-validation py-5" action="index.php?section=login" method="GET" novalidate>
+    <form class="needs-validation py-5" novalidate>
         <div class="form-group">
-            <label for="mail">Correo Electrónico: </label>
-            <label class="ast" style="color:red;">*
-                <span class="ob">Campo Obligatorio</span>
-            </label>
-            <input type="email" class="form-control" id="mail" aria-describedby="emailHelp" required>
-            <small id="emailHelp" class="form-text text-muted">* Nunca compartas tu información a terceros.</small>
+            <label for="mail">Correo Electrónico:</label>
+            <input type="email" class="form-control" id="mail" placeholder="micorreo@example.com" required>
             <div class="invalid-feedback">
-                Debes ingresar tu correo
+                El formato es incorrecto o no has ingresado tu correo.
             </div>
         </div>
         <div class="form-group">
-            <label for="passwd">Contraseña: </label>
-            <label class="ast" style="color:red;">*
-                <span class="ob">Campo Obligatorio</span>
-            </label>
-            <input type="password" class="form-control" id="passwd" required>
-            <div class="invalid-feedback">
-                No puedes iniciar sesión sin tu contraseña.
+            <label for="paswd">Contraseña:</label>
+            <div class="input-group pb-2">
+                <input type="password" class="form-control" id="paswd" placeholder="Ingrese su contraseña" aria-describedby="view" required>
+                <div class="input-group-append">
+                    <a type="button" class="input-group-text icon-eye" id="viewbtn" onclick="ViewPassword()"></a>
+                </div>
+                <div class="invalid-feedback">
+                    Ingrese su contraseña.
+                </div>
+            </div>
+            <a href="" class="text-info">Olvidé mi contraseña</a>
+        </div>
+        <div class="form-group">
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="" id="invalidCheck">
+                <label class="form-check-label" for="invalidCheck">
+                    Recordar mi correo electrónico.
+                </label>
             </div>
         </div>
-        <div class="form-group form-check">
-            <input type="checkbox" class="form-check-input" id="remember">
-            <label class="form-check-label" for="remember">Recordar mi correo</label>
-        </div>
-        <button type="submit" class="btn my-btn">Iniciar Sesión</button>
-    </form>
+  <button class="btn my-btn" type="submit">Iniciar Sesión</button>
+</form>
 </div>
 <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
@@ -43,10 +46,24 @@
           event.preventDefault();
           event.stopPropagation();
         }
-        if ()
         form.classList.add('was-validated');
       }, false);
     });
   }, false);
 })();
+</script>
+<script>
+    function ViewPassword()
+    {
+        var password = document.getElementById("paswd");
+        var icon = document.getElementById("viewbtn");
+        if(password.type == "password"){
+            password.type = "text";
+            icon.classList.replace("icon-eye","icon-eye-blocked");
+        }
+        else{
+            password.type = "password";
+            icon.classList.replace("icon-eye-blocked","icon-eye");
+        }
+    }
 </script>

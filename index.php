@@ -13,6 +13,7 @@
         <script src="Styles/jsb/bootstrap.min.js"></script>
         <link rel="icon" type="image/png" href="Images/start_logo.png" />
         <link rel="stylesheet" href="Styles/css/style_1.css">
+        <link rel="stylesheet" href="Styles/Icons/style.css">
         
     </head>
     <body>
@@ -35,16 +36,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto col-sm-7 list">
                         <li class="nav-item">
-                            <a class="nav-link nvi" href="index.php?section=about_us">Conócenos</a>
+                            <a class="nav-link nvi" style="color:#E4E6C3;" href="index.php?section=about_us">Conócenos</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nvi" href="index.php?section=contact">Contacto</a>          
+                            <a class="nav-link nvi" style="color:#E4E6C3;" href="index.php?section=contact">Contacto</a>          
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link nvi" href="index.php?section=directions">Ubicación</a>          
+                            <a class="nav-link nvi" style="color:#E4E6C3;" href="index.php?section=directions">Ubicación</a>          
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle nvi" data-toggle="dropdown">Productos</a>
+                            <a class="nav-link dropdown-toggle nvi" style="color:#E4E6C3;" data-toggle="dropdown">Productos</a>
                             <div class="dropdown-menu dropdiv">
                                 <a class="dropdown-item nvi" href="index.php?section=categories&category_id=1">Envoltorios</a>
                                 <a class="dropdown-item nvi" href="index.php?section=categories&category_id=2">Desechables</a>
@@ -63,40 +64,6 @@
                 </div>
             </nav>
         </header>
-            <!--
-            <nav class="navbar navbar-expand-md mainheader">
-                <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <div class="col-sm-2"></div>
-                    <ul class="navbar-nav mr-auto list">
-                        <li class="nav-item">
-                            <a class="nav-link nvi" href="index.php?section=about_us">Conócenos</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nvi" href="index.php?section=contact">Contacto</a>          
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nvi" href="index.php?section=directions">Ubicación</a>          
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle nvi" data-toggle="dropdown">Productos</a>
-                            <div class="dropdown-menu dropdiv" >
-                                <a class="dropdown-item nvi" href="index.php?section=categories&category_id=1">Envoltorios</a>
-                                <a class="dropdown-item nvi" href="index.php?section=categories&category_id=2">Desechables</a>
-                                <a class="dropdown-item nvi" href="index.php?section=categories&category_id=3">Alimentos</a>
-                                <a class="dropdown-item nvi" href="index.php?section=categories&category_id=4">Fibras</a>
-                                <a class="dropdown-item nvi" href="index.php?section=categories&category_id=5">Aseo</a>
-                                <a class="dropdown-item nvi" href="index.php?section=categories&category_id=6">Bolsas</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <form class="form-inline col-sm-3" action="index.php" method="GET">
-                        <input type="hidden" name="section" value="login">
-                        <button class="px-4 form-control my-btn" type="submit">Inicia Sesión</button>
-                        <label class="px-3 register"><a href="index.php?section=register">o Regístrate.</a></label>
-                    </form>
-                </div>
-            </nav>
--->
         <main>
         <?php
             switch ($section) {

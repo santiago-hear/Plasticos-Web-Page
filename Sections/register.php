@@ -31,7 +31,7 @@
                 </label>
                 <input type="email" onchange="verify_mail()" class="form-control" id="mail" name="mail" placeholder="ejemplo@ejemplo.com" required>
                 <div class="invalid-feedback">
-                    No ingresaste tu correo.
+                    ¡Vaya! parece que esto no es un correo electrónico.
                 </div>
             </div>
             <div class="form-group col-md-6">
@@ -42,7 +42,7 @@
                 <input type="email" onchange="verify_mail()" class="form-control" id="mailconfirm" name="mailconfirm" placeholder="ejemplo@ejemplo.com" required>
                 <span id="errormail"></span>
                 <div class="invalid-feedback">
-                   No confirmaste tu correo.
+                    ¡Vaya! debes confirmar tu correo.
                 </div>
             </div>
         </div>
@@ -61,9 +61,6 @@
                 <div class="invalid-feedback">
                     No ingresaste una contraseña.
                 </div>
-                <div class="valid-feedback">
-                    ¡Bien hecho!.
-                </div>
             </div>
             <div class="form-group col-md-6">
                 <label for="paswdconfirm">Confirmar contraseña:</label>
@@ -71,12 +68,10 @@
                     <span class="ob">Campo Obligatorio</span>
                 </label>
                 <input type="password" onchange="verify_pswd()" class="form-control" id="paswdconfirm" name="paswdconfirm" placeholder="Confirmar Contraseña" required>
-                <span id="errorpaswd"></span>
+                <span id="errorpaswd"> </span>
+                <span id="errorpattern"> </span>
                 <div class="invalid-feedback">
                     No confirmaste tu contraseña
-                </div>
-                <div class="valid-feedback">
-                    ¡Bien hecho!.
                 </div>
             </div>
         </div>
@@ -180,7 +175,7 @@
         var d = document.registerform;
         if(email !== emailconfirm)
         {
-            document.getElementById('errormail').innerHTML = "Los correos electrónicos deben ser iguales";
+            document.getElementById('errormail').innerHTML = "Los correos electrónicos deben ser iguales.";
             d.regbtn.disabled = true;
         }
         else
@@ -199,25 +194,34 @@
         var passwordconfirm = document.getElementById('paswdconfirm').value;
         var d = document.registerform;
         var expresion= /^(?=\w*\d)(?=\w*[A-Z])(?=\w*[a-z])\S{8,16}$/
+        var eq;
         if(password !== passwordconfirm)
         {
-            document.getElementById('errorpaswd').innerHTML = "las contraseñas deben ser iguales";
+            document.getElementById('errorpaswd').innerHTML = "Las contraseñas deben ser iguales.";
+            d.regbtn.disabled = true;
+            eq = false;
+        }
+        else
+        {
+            document.getElementById('errorpaswd').innerHTML = "";
+            if(terms.checked==true){
+                d.regbtn.disabled = false;
+            }else{
+                d.regbtn.disabled = true;
+            }
+        }
+        if (!expresion.test(password))
+        { 
+            document.getElementById("errorpattern").innerHTML = "La contraseña no cumple con los requisitos";
             d.regbtn.disabled = true;
         }
         else
         {
-            if (!expresion.test(password))
-            { 
-                document.getElementById("errorpaswd").innerHTML = "La contraseña no cumple con los requisitos";
-            }
-            else{
-                document.getElementById('errorpaswd').innerHTML = "";
-                document.getElementById('terms');
-                if(terms.checked==true){
-                    d.regbtn.disabled = false;
-                }else{
-                    d.regbtn.disabled = true;
-                }
+            document.getElementById("errorpattern").innerHTML = "";
+            if(terms.checked==true && eq != false){
+                d.regbtn.disabled = false;
+            }else{
+                d.regbtn.disabled = true;
             }
         }
     }

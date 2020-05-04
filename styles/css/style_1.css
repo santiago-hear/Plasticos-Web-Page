@@ -12,27 +12,34 @@ header , .searchnav, .mainheader ul li a, .dropdiv
     -webkit-transition:all ease .8s ;
     transition:all ease .8s;
 }
+/* Configuracion formulario de busqueda */
 .searchform
 {
     padding-inline-start: 5%;
 }
-
-.register a
+/* Color enlace de "Registrate" */
+.register a, .ligthlink
 {
     color: #E4E6C3;
 }
+/* Configuracion contenedor del menu y login*/
 .mainheader
 {
     padding-top: 10px;
     padding-bottom: 10px;
-    margin-top: 88px;
+    margin-top: 78px;
 }
 /* tamaño del logotipo */
 .searchnav a img
 {
-    max-width: 10em;
-    max-height: 10em;
+    max-width: 8em;
+    max-height: 8em;
 }
+.nvi
+{
+    color: #E4E6C3;
+}
+
 /* hover del menu categorias */
 .nvi:hover
 {
@@ -40,6 +47,7 @@ header , .searchnav, .mainheader ul li a, .dropdiv
     color: #222725;
     border-radius: 0.6em;
 }
+/*Configuracion del menu desplegable productos*/
 .dropdiv
 {
     border: 1px solid #E4E6C3;
@@ -49,18 +57,18 @@ header , .searchnav, .mainheader ul li a, .dropdiv
 {
     background-color: #222725;
     color: #E4E6C3;
-    -moz-transition:all ease .8s; /*Aplicamos una ligera transición*/
+    -moz-transition:all ease .8s; /*una ligera transición*/
     -webkit-transition:all ease .8s ;
     transition:all ease .8s;
 }
 .searchbtn
 {
     margin-left: 2%;
-    -moz-transition:all ease .8s; /*Aplicamos una ligera transición*/
+    -moz-transition:all ease .8s; /*una ligera transición*/
     -webkit-transition:all ease .8s ;
     transition:all ease .8s;
 }
-/* hover boton de busqueda e incio de sesion */
+/* hover de los botones*/
 .my-btn:hover
 {
     background-color: #899878;
@@ -78,14 +86,14 @@ header , .searchnav, .mainheader ul li a, .dropdiv
     color: #E4E6C3;
     background-color: black;
 }
-/* hover del texto del banner */
+/* hover del boton del banner */
 .msg button:hover
 {
     background-color: #222725;
     color: #E4E6C3;
     
 }
-
+/* configuracion de los enlaces del perfil */
 .enl
 {
     font-weight: bold;
@@ -94,29 +102,30 @@ header , .searchnav, .mainheader ul li a, .dropdiv
     -webkit-transition:all ease .8s ;
     transition:all ease .8s;
 }
+/* hover de los enlaces del perfil */
 .enl:hover
 {
     text-decoration: none;
     color: #3F5E5A;
 }
-
+/* Color de fondo mensaje bienvenida */
 .start
 {
     background-color: mintcream;
 }
-
+/* Color fondo vista del producto */
 .boxproduct
 {
     background-color: azure;
 }
-
+/* tamaño del frame de la ubicacion */
 .mapframe
 {
     height: 500px;
     width: 100%;
     margin-top: 50px;
 }
-
+/* Color de fondo de boton desabilitado*/
 .registerbtn:disabled,
 .registerbtn[disabled]{
     background-color: #222725;
@@ -140,16 +149,34 @@ header , .searchnav, .mainheader ul li a, .dropdiv
     filter: alpha(opacity=70);
     opacity: .7;
 }
-
+/* Tamaño de la imagen perfil en "cambiar imagen" */
 .profile_photo img
 {
     margin-top: 20px;
     max-width: 70%;
     max-height: 70%;
 }
-
-#errormail, #errorpaswd
+/* texto error formularios */
+#errormail, #errorpaswd, #errorpattern
 {
     color: red;
-    font-size: 1em;
+    font-size: 0.9em;
+}
+
+.needs-validation
+{
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.control_tabs
+{
+    color: #E4E6C3;
+    background-color: #222725;
+}
+
+.control_tabs:hover
+{
+    color: #222725;
+    background-color: #E4E6C3;
 }

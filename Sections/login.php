@@ -1,6 +1,6 @@
 <div class="container py-5">
     <h1 class="display-3 text-center">Inciar Sesión</h1>
-    <form class="needs-validation py-5" novalidate>
+    <form class="needs-validation loginform py-5" novalidate>
         <div class="form-group">
             <label for="mail">Correo Electrónico:</label>
             <input type="email" class="form-control" id="mail" placeholder="micorreo@example.com" required>

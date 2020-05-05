@@ -56,7 +56,7 @@ header , .searchnav, .mainheader ul li a, .dropdiv
 .my-btn
 {
     background-color: #222725;
-    color: #E4E6C3;
+    color: #E4E6C3 !important;
     -moz-transition:all ease .8s; /*una ligera transición*/
     -webkit-transition:all ease .8s ;
     transition:all ease .8s;
@@ -72,7 +72,7 @@ header , .searchnav, .mainheader ul li a, .dropdiv
 .my-btn:hover
 {
     background-color: #899878;
-    color: #222725;
+    color: #222725 !important;
     border-color: black;
 }
 /* texto del banner */
@@ -163,7 +163,7 @@ header , .searchnav, .mainheader ul li a, .dropdiv
     font-size: 0.9em;
 }
 
-.needs-validation
+.loginform
 {
     margin-left: 20%;
     margin-right: 20%;
@@ -171,12 +171,33 @@ header , .searchnav, .mainheader ul li a, .dropdiv
 
 .control_tabs
 {
-    color: #E4E6C3;
-    background-color: #222725;
+    color: #3F5E5A;
 }
 
 .control_tabs:hover
 {
     color: #222725;
     background-color: #E4E6C3;
+}
+
+.icon_edit
+{
+    color: darkgreen
+}
+
+.icon_edit:hover
+{
+    color: #222725;
+    text-decoration: none;
+}
+
+.icon_delete
+{
+    color: coral;
+}
+
+.icon_delete:hover
+{
+    color: crimson;
+    text-decoration: none;
 }

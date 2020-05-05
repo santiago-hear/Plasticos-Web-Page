@@ -58,7 +58,7 @@
             </blockquote>
             <div class="text-center m-3">
                 <form>
-                    <button class="btn my-btn"><i class="pr-2">★</i> Marcar como favorito</button>
+                    <button class="btn my-btn"><i class="pr-2 icon-star-full"></i>Favorito</button>
                 </form>
             </div>
         </div>

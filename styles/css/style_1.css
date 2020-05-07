@@ -201,3 +201,14 @@ header , .searchnav, .mainheader ul li a, .dropdiv
     color: crimson;
     text-decoration: none;
 }
+
+.icon_picture
+{
+    color: darkslategray;
+}
+
+.icon_picture:hover
+{
+    color: darkturquoise;
+    text-decoration: none;
+}

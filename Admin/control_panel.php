@@ -29,15 +29,15 @@
             </div>
         </div>
     </header>
-    <main class="container py-5">
-        <nav>
-        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+    <main class="mx-5 py-5">
+        <nav class="px-5">
+            <div class="nav nav-tabs px-5" id="nav-tab" role="tablist">
                 <a class="nav-item nav-link control_tabs" id="nav-products-tab" href="control_panel.php?view=products">
                     Productos</a>
                 <a class="nav-item nav-link control_tabs" id="nav-categories-tab" href="control_panel.php?view=categories">
                     Categorias</a>
-                <a class="nav-item nav-link control_tabs" id="nav-customers-tab"  href="control_panel.php?view=customers">
-                    Clientes</a>
+                <a class="nav-item nav-link control_tabs" id="nav-users-tab"  href="control_panel.php?view=users">
+                    Usuarios</a>
                 <a class="nav-item nav-link control_tabs" id="nav-comments-tab"  href="control_panel.php?view=comments">
                     Comentarios</a>
                 <a class="nav-item nav-link control_tabs" id="nav-contact-tab" href="control_panel.php?view=contact">
@@ -50,7 +50,7 @@
                     Otros</a>
             </div>
         </nav>
-        <div class="tab-content" id="nav-tabContent">
+        <div>
             <?php
                 switch ($view) 
                 {
@@ -58,8 +58,8 @@
                         include("products_control.php");break;
                     case 'categories':
                         include("categories_control.php");break;
-                    case 'customers':
-                        include("customers_control.php");break;
+                    case 'users':
+                        include("users_control.php");break;
                     case 'comments':
                         include("comments_control.php");break;
                     case 'contact':
@@ -74,12 +74,6 @@
                         #code
                 }
             ?>
-            <div class="tab-pane fade" id="nav-customers" role="tabpanel" aria-labelledby="nav-customers-tab">...</div>
-            <div class="tab-pane fade" id="nav-comments" role="tabpanel" aria-labelledby="nav-comments-tab">...</div>
-            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">...</div>
-            <div class="tab-pane fade" id="nav-aboutus" role="tabpanel" aria-labelledby="nav-aboutus-tab">... </div>
-            <div class="tab-pane fade" id="nav-location" role="tabpanel" aria-labelledby="nav-location-tab">...</div>
-            <div class="tab-pane fade" id="nav-others" role="tabpanel" aria-labelledby="nav-others-tab">...</div>
         </div>
     </main>
     <footer class="text-muted">
@@ -143,7 +137,7 @@
 
         document.getElementById("nav-products-tab").classList.remove("active");
         document.getElementById("nav-categories-tab").classList.remove("active");
-        document.getElementById("nav-customers-tab").classList.remove("active");
+        document.getElementById("nav-users-tab").classList.remove("active");
         document.getElementById("nav-comments-tab").classList.remove("active");
         document.getElementById("nav-contact-tab").classList.remove("active");
         document.getElementById("nav-aboutus-tab").classList.remove("active");

@@ -31,47 +31,48 @@ $vision = <<<HTML
 HTML;
 
 ?>
-
-<div class="row my-5">
-    <div class="col-sm-8">
-        <h1 class="text-right">Información Conócenos</h1>
+<div class="container px-5">
+    <div class="row my-5">
+        <div class="col-sm-8">
+            <h1 class="text-right">Información Conócenos</h1>
+        </div>
+        <div class="col-sm-4 my-auto">
+            <button class="btn my-btn" id="editbtn">Editar</button>
+        </div>
     </div>
-    <div class="col-sm-4 my-auto">
-        <button class="btn my-btn" id="editbtn">Editar</button>
-    </div>
+    <form class="proform" action="control_panel.php?view=contact" method="POST">
+        <hr>
+        <div class="form-group py-3">
+            <label for="aboutus-text" class="col-form-label"><h4>¿Quienes somos?</h4></label>
+            <div class="">
+                <?php
+                echo $aboutus;
+                ?>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="mision-text" class="col-form-label"><h4>Misión:</h4></label>
+            <div class="">
+                <?php
+                echo $mision;
+                ?>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="vision-text" class="col-form-label"><h4>Visión:</h4></label>
+            <div class="">
+                <?php
+                echo $vision;
+                ?>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="">
+                <button type="submit" class="btn my-btn" id="save" disabled>Guardar Cambios</button>
+            </div>
+        </div>
+    </form>
 </div>
-<form class="proform" action="control_panel.php?view=contact" method="POST">
-    <hr>
-    <div class="form-group py-3">
-        <label for="aboutus-text" class="col-form-label"><h4>¿Quienes somos?</h4></label>
-        <div class="">
-            <?php
-            echo $aboutus;
-            ?>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="mision-text" class="col-form-label"><h4>Misión:</h4></label>
-        <div class="">
-            <?php
-            echo $mision;
-            ?>
-        </div>
-    </div>
-    <div class="form-group">
-        <label for="vision-text" class="col-form-label"><h4>Visión:</h4></label>
-        <div class="">
-            <?php
-            echo $vision;
-            ?>
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="">
-            <button type="submit" class="btn my-btn" id="save" disabled>Guardar Cambios</button>
-        </div>
-    </div>
-</form>
 <script>
 $('#editbtn').click(function(){
         $('#aboutus-text').prop('disabled', false);

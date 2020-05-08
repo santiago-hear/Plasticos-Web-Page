@@ -1,5 +1,5 @@
 <div>
-    <h1 class="text-center my-3">Clientes</h1>
+    <h1 class="text-center my-3">Usuarios</h1>
     <hr>
     <div class="my-5">
         <table class="table">
@@ -13,8 +13,9 @@
                     <th scope="col">Genero</th>
                     <th scope="col">Nacimiento</th>
                     <th scope="col">Ciudad</th>
-                    <th scope="col">Departamento</th>
+                    <th scope="col">Dep.</th>
                     <th scope="col">Foto</th>
+                    <th scope="col">Permisos</th>
                 </tr>
             </thead>
             <tbody>
@@ -29,7 +30,14 @@
                     <td>12/12/12</td>
                     <td>Manizales</td>
                     <td>Caldas</td>
-                    <td><a href="" class="icon_picture"><i class="icon-file-picture"></i></a></td>
+                    <td class="text-center"><a href="" class="icon_picture"><i class="icon-file-picture"></i></a></td>
+                    <td>
+                        <select name="" id="" class="form-control p-0">
+                            <option selected>usuario</option>
+                            <option>editor</option>
+                            <option>admin</option>
+                        </select>
+                    </td>
                     <td><a href="# " class="icon_delete"><i class="icon-cross"></i></a></td>
                 </tr>
                 <?php endfor;?>

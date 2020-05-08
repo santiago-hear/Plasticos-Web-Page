@@ -1,4 +1,4 @@
-<div>
+<div class="mx-5">
     <h1 class="text-center my-3">Productos</h1>
     <hr>
     <div class="text-center mt-3">

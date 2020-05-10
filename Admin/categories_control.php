@@ -1,9 +1,5 @@
 <?php
-    include("db_connection/connection.php");
-    $query = "SELECT * FROM Category";
-
-    $result = mysqli_query($database,$query);
-
+    
 ?>
 
 <div class="mx-5" id="nav-categories" role="tabpanel" aria-labelledby="nav-categories-tab">
@@ -46,20 +42,19 @@
                 </tr>
             </thead>
             <tbody>
-                <?php for ($i=0; $i < 3; $i++):?>
+                <?php while ($categories = mysqli_fetch_assoc($result_categories)):?>
                 <tr>
                     <?php
-                        $data = mysqli_fetch_assoc($result);
-                        var_dump($data);
-                        echo "<th scope='row'>$data[CategoryId]</th>";
-                        echo "<td>$data[CategoryName]</td>";
-                        echo "<td>$data[Description]</td>";
+                        echo "<th scope='row'>$categories[cid]</th>";
+                        echo "<td>$categories[CategoryName]</td>";
+                        echo "<td>$categories[Description]</td>";
+                        echo "<td>$categories[amount_p]</td>";
                     ?>
-                    <td>5</td>
+                    
                     <td><a href="" class="icon_edit"><i class="icon-pencil"></i></a></td>
                     <td><a href="" class="icon_delete"><i class="icon-cross"></i></a></td>
                 </tr>
-                <?php endfor;?>
+                <?php endwhile;?>
             </tbody>
         </table>
     </div>

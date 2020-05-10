@@ -1,5 +1,17 @@
 <?php
+    include("db_connection/connection.php");
+
     $view = isset ($_GET["view"]) ? $_GET["view"] : "products";
+
+    $get_categories = 
+    "
+        SELECT 
+            CategoryId as cid,
+            CategoryName,Description, 
+            (select count(*) from productxcategory as p where cid = p.CategoryId) as amount_p 
+        from category; 
+    ";
+    $result_categories = mysqli_query($database,$get_categories);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,6 +99,10 @@
     </footer>
 </body>
 </html>
+<?php
+    mysqli_free_result($result_categories);
+    mysqli_close($database);
+?>
 <script>
 // Example starter JavaScript for disabling form submissions if there are invalid fields
 (function() {

@@ -5,23 +5,23 @@
         <a class="btn my-btn" data-toggle="collapse" onclick="javascript:hide_show('Producto',this);" data-target="#addproducts">Añadir Producto</a>
         <div id="addproducts" class="collapse mt-3">
             <h3 class="text-center my-3">Registrar Producto</h3>
-            <form class="needs-validation text-left" novalidate>
+            <form class="needs-validation text-left" action="db_connection/set_products.php" method="POST" novalidate>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="nameproduct">Nombre:</label>
-                        <input type="text" class="form-control" placeholder="Nombre del producto" id="nameproduct" required>
+                        <input type="text" class="form-control" name="nameproduct" placeholder="Nombre del producto" id="nameproduct" required>
                         <div class="invalid-feedback">
                             Debes ingresar el nombre del producto.
                         </div>
                     </div>
                     <div class="form-group col-md-6">
                         <label for="category">Categoria: </label>
-                        <select id="category" class="form-control" required>
+                        <select id="category" class="form-control" name="category[]" required>
                             <option selected disabled>Escoger Categoria</option>
                             <?php  
-                                for ($i=0; $i < 10; $i++) 
+                                while ($categories = mysqli_fetch_assoc($result_categories))
                                 { 
-                                    echo "<option> Category name </option>";
+                                    echo "<option value='$categories[cid]'> $categories[CategoryName] </option>";
                                 }
                             ?>
                         </select>
@@ -32,29 +32,29 @@
                 </div>
                 <div class="form-group">
                     <label for="description">Descripción:</label>
-                    <textarea type="text" class="form-control" id="description" placeholder="Descripcion de producto" cols="5" rows="5"></textarea>
+                    <textarea type="text" name="description" class="form-control" id="description" placeholder="Descripcion de producto" cols="5" rows="5"></textarea>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-sm-6">
                         <label for="price">Precio:</label>
-                        <input type="number" step="500" class="form-control" placeholder="Precio del producto" required>
+                        <input type="number" step="500" name="price" class="form-control" placeholder="Precio del producto" required>
                         <div class="invalid-feedback">
                             El producto debe tener un precio.
                         </div>
                     </div>
                     <div class="form-group col-sm-6">
                         <label for="amount">Cantidad:</label>
-                        <input type="text" class="form-control" placeholder="Paq. x 20 unidades" id="amount">
+                        <input type="text" class="form-control" name="amount" placeholder="Paq. x 20 unidades" id="amount">
                     </div>
                 </div>
                 <div class="form-row mb-4">
                     <div class="col-sm-6">
                         <label class="form-label" for="brand">Marca(s): </label>
-                        <input class="form-control" placeholder="Marcas del producto separadas por coma" type="text" id="brand">
+                        <input class="form-control" name="brand" placeholder="Marcas del producto separadas por coma" type="text" id="brand">
                     </div>
                     <div class="col-sm-6">
                         <label class="form-label" for="material">Material: </label>
-                        <input class="form-control" placeholder="icopo, plastico, etc..." type="text" id="material">
+                        <input class="form-control" name="material" placeholder="icopo, plastico, etc..." type="text" id="material">
                     </div>
                 </div>
                 <button type="submit" class="btn my-btn">Registrar Producto</button>

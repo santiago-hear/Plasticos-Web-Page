@@ -1,7 +1,30 @@
+<?php
+    $get_products = 
+    "
+        SELECT 
+            p.ProductId,
+            p.ProductName,
+            Description,
+            p.Amount,
+            p.Price, 
+            (SELECT get_categories(p.ProductId)) as categories,
+            Brands,
+            Material  
+        FROM product p; 
+    ";
+    $result_products = mysqli_query($database,$get_products);
+?>
 <div class="mx-5">
     <h1 class="text-center my-3">Productos</h1>
     <hr>
     <div class="text-center mt-3">
+        <?php $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
+            if ($msg == 'ok') :
+                echo "<div class='alert alert-success'>El producto se registró con éxito</div>";
+            elseif ($msg == 'error'):
+                echo "<div class='alert alert-danger'>Ocurrió un error al registrar el producto</div>";
+            endif;
+        ?>
         <a class="btn my-btn" data-toggle="collapse" onclick="javascript:hide_show('Producto',this);" data-target="#addproducts">Añadir Producto</a>
         <div id="addproducts" class="collapse mt-3">
             <h3 class="text-center my-3">Registrar Producto</h3>
@@ -57,6 +80,15 @@
                         <input class="form-control" name="material" placeholder="icopo, plastico, etc..." type="text" id="material">
                     </div>
                 </div>
+                <div class="input-group mb-4">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Imagen del Producto</span>
+                    </div>
+                    <div class="custom-file">
+                        <input type="file" name="productimage" class="custom-file-input" id="productimage">
+                        <label class="custom-file-label" for="productimage">Seleccionar Archivo</label>
+                    </div>
+                </div>
                 <button type="submit" class="btn my-btn">Registrar Producto</button>
             </form>
         </div>
@@ -73,24 +105,44 @@
                     <th scope="col">Categoria</th>
                     <th scope="col">Marcas</th>
                     <th scope="col">Material</th>
+                    <th scope="col">Imagen</th>
                     
                 </tr>
             </thead>
             <tbody>
-                <?php for ($i=0; $i < 5; $i++):?>
+                <?php while ($products = mysqli_fetch_assoc($result_products)):?>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Plato 30 oz.</td>
-                    <td>Plato ideal para típicos como frijoles ...</td>
-                    <td>Paquete x 20 unidades.</td>
-                    <td>3500</td>
-                    <td>Desechables</td>
-                    <td>Darnel, Wow!</td>
-                    <td>Icopor</td>
-                    <td><a href="#" class="icon_edit"><i class="icon-pencil"></i></a></td>
-                    <td><a href="# " class="icon_delete"><i class="icon-cross"></i></a></td>
+                    <?php
+                    echo "<th scope='row'>$products[ProductId]</th>";
+                    echo "<td>$products[ProductName]</td>";
+                    if ($products["Description"]==''):
+                        echo "<td class='text-muted'><small>sin contenido</small></td>";
+                    else:
+                        echo "<td>$products[Description]</td>";
+                    endif;
+                    if ($products["Amount"]==''):
+                        echo "<td class='text-muted'><small>sin contenido</small></td>";
+                    else:
+                        echo "<td>$products[Amount]</td>";
+                    endif;
+                    echo "<td>$$products[Price]</td>";
+                    echo "<td>$products[categories]</td>";
+                    if ($products["Brands"]==''):
+                        echo "<td class='text-muted'><small>sin contenido</small></td>";
+                    else:
+                        echo "<td>$products[Brands]</td>";
+                    endif;
+                    if ($products["Material"]==''):
+                        echo "<td class='text-muted'><small>sin contenido</small></td>";
+                    else:
+                        echo "<td>$products[Material]</td>";
+                    endif;
+                    echo "<td class='text-center'><a href='' class='icon_picture'><i class='icon-file-picture'></i></a></td>";
+                    echo "<td><a href='#' class='icon_edit'><i class='icon-pencil'></i></a></td>";
+                    echo "<td><a href='#' class='icon_delete'><i class='icon-cross'></i></a></td>";
+                    ?>
                 </tr>
-                <?php endfor;?>
+                <?php endwhile;?>
             </tbody>
         </table>
     </div>

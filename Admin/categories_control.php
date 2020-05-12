@@ -1,7 +1,3 @@
-<?php
-    
-?>
-
 <div class="mx-5" id="nav-categories" role="tabpanel" aria-labelledby="nav-categories-tab">
     <h1 class="text-center my-3">Categorias</h1>
     <hr>

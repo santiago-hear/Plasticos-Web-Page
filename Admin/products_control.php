@@ -9,7 +9,8 @@
             p.Price, 
             (SELECT get_categories(p.ProductId)) as categories,
             Brands,
-            Material  
+            Material,
+            Image
         FROM product p; 
     ";
     $result_products = mysqli_query($database,$get_products);
@@ -19,16 +20,25 @@
     <hr>
     <div class="text-center mt-3">
         <?php $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
-            if ($msg == 'ok') :
-                echo "<div class='alert alert-success'>El producto se registró con éxito</div>";
-            elseif ($msg == 'error'):
-                echo "<div class='alert alert-danger'>Ocurrió un error al registrar el producto</div>";
-            endif;
+            switch ($msg):
+                case 'okadd':
+                    echo "<div class='alert alert-success'>El producto se registró con éxito</div>";
+                    break;
+                case 'erroradd':
+                    echo "<div class='alert alert-danger'>Ocurrió un error al registrar el producto</div>";
+                    break;
+                case 'okdel':
+                    echo "<div class='alert alert-success'>El producto se eliminó correctamente</div>";
+                    break;
+                case 'errordel':
+                    echo "<div class='alert alert-danger'>Ocurrió un error al eliminar el producto</div>";
+                    break;
+            endswitch;
         ?>
         <a class="btn my-btn" data-toggle="collapse" onclick="javascript:hide_show('Producto',this);" data-target="#addproducts">Añadir Producto</a>
         <div id="addproducts" class="collapse mt-3">
             <h3 class="text-center my-3">Registrar Producto</h3>
-            <form class="needs-validation text-left" action="db_connection/set_products.php" method="POST" novalidate>
+            <form class="needs-validation text-left" enctype='multipart/form-data' action="db_connection/set_products.php" method="POST" novalidate>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="nameproduct">Nombre:</label>
@@ -85,7 +95,7 @@
                         <span class="input-group-text">Imagen del Producto</span>
                     </div>
                     <div class="custom-file">
-                        <input type="file" name="productimage" class="custom-file-input" id="productimage">
+                        <input type="file" name="productimage" class="custom-file-input" id="productimage" accept='image/jpeg,image/png'>
                         <label class="custom-file-label" for="productimage">Seleccionar Archivo</label>
                     </div>
                 </div>
@@ -115,32 +125,37 @@
                     <?php
                     echo "<th scope='row'>$products[ProductId]</th>";
                     echo "<td>$products[ProductName]</td>";
-                    if ($products["Description"]==''):
-                        echo "<td class='text-muted'><small>sin contenido</small></td>";
-                    else:
-                        echo "<td>$products[Description]</td>";
-                    endif;
-                    if ($products["Amount"]==''):
-                        echo "<td class='text-muted'><small>sin contenido</small></td>";
-                    else:
-                        echo "<td>$products[Amount]</td>";
-                    endif;
+                    echo ($products["Description"]=='') ? 
+                            "<td class='text-muted'><small>sin contenido</small></td>" : "<td>$products[Description]</td>";
+                    echo ($products["Amount"]=='') ?
+                            "<td class='text-muted'><small>sin contenido</small></td>" : "<td>$products[Amount]</td>";
                     echo "<td>$$products[Price]</td>";
                     echo "<td>$products[categories]</td>";
-                    if ($products["Brands"]==''):
-                        echo "<td class='text-muted'><small>sin contenido</small></td>";
-                    else:
-                        echo "<td>$products[Brands]</td>";
-                    endif;
-                    if ($products["Material"]==''):
-                        echo "<td class='text-muted'><small>sin contenido</small></td>";
-                    else:
-                        echo "<td>$products[Material]</td>";
-                    endif;
-                    echo "<td class='text-center'><a href='' class='icon_picture'><i class='icon-file-picture'></i></a></td>";
-                    echo "<td><a href='#' class='icon_edit'><i class='icon-pencil'></i></a></td>";
-                    echo "<td><a href='#' class='icon_delete'><i class='icon-cross'></i></a></td>";
+                    echo ($products["Brands"]=='') ? 
+                            "<td class='text-muted'><small>sin contenido</small></td>" : "<td>$products[Brands]</td>";
+                    echo ($products["Material"]=='') ? 
+                            "<td class='text-muted'><small>sin contenido</small></td>" : "<td>$products[Material]</td>";
+                    echo "<td class='text-center'><a href='' data-toggle='modal' data-target='#Modal$products[ProductId]' class='icon_picture'><i class='icon-file-picture'></i></a></td>";
+                    echo "<td><a href='control_panel.php?view=editproduct&pid=$products[ProductId]' class='icon_edit'><i class='icon-pencil'></i></a></td>";
+                    echo "<td><a href='db_connection/delete_product.php?pid=$products[ProductId]' class='icon_delete'><i class='icon-cross'></i></a></td>";
                     ?>
+                    <div class="modal" id='<?php echo "Modal$products[ProductId]"?>'>
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <!-- Modal Header -->
+                                <div class="modal-header">
+                                    <?php
+                                        $code = base64_encode($products['Image']);
+                                        echo "<img src='data:image/jpeg;base64,$code'>"; 
+                                    ?>
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                </div>
+                                <div class="modal-footer">
+                                <button type="button" class="btn my-btn" data-dismiss="modal">Cerrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </tr>
                 <?php endwhile;?>
             </tbody>

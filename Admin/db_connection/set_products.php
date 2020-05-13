@@ -9,7 +9,7 @@
     $brand = isset($_POST['brand']) ? $_POST["brand"] : 'NULL'; 
     $material = isset($_POST['material']) ? $_POST["material"] : 'NULL';
 
-    $backdir = $_SERVER["HTTP_REFERER"];
+    $path = str_replace("\\","/",$_FILES['productimage']['tmp_name']);
 
     $name = $name != '' ? "'$name'" : 'NULL' ;
     $description = $description != '' ? "'$description'" : 'NULL' ;
@@ -25,20 +25,27 @@
             Price = $price,
             Amount = $amount,
             Brands = $brand,
-            Material = $material";
+            Material = $material,
+            Image = LOAD_FILE('$path')";
 
-    var_dump($insert_product);
+    $okp = mysqli_query($database,$insert_product);
 
-    echo mysqli_query($database,$insert_product);
+    if ($okp):
+        for ($i=0; $i < sizeof($categories); $i++) 
+        { 
+            $insert_rel = "
+            INSERT INTO productxcategory SET
+                ProductId = (SELECT MAX(ProductId) FROM  product),
+                CategoryId = $categories[$i]";
+            $okrel = mysqli_query($database,$insert_rel);
+        }
+    else:
+        $okp = false;
+    endif;
 
-    for ($i=0; $i < sizeof($categories); $i++) 
-    { 
-        $insert_rel = "
-        INSERT INTO productxcategory SET
-            ProductId = (SELECT MAX(ProductId) FROM  product),
-            CategoryId = $categories[$i]";
-        echo mysqli_query($database,$insert_rel);
-    }
-    
-    header("Location: http://localhost/Plasticos_la17/Admin/control_panel.php?view=products&msg=ok"); 
+    if ($okp):
+        header("Location: http://localhost/Plasticos_la17/Admin/control_panel.php?view=products&msg=okadd");
+    else:
+        header("Location: http://localhost/Plasticos_la17/Admin/control_panel.php?view=products&msg=erroradd");
+    endif; 
 ?>

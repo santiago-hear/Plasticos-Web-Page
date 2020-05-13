@@ -1,3 +1,5 @@
+ALTER TABLE product MODIFY COLUMN Image MEDIUMBLOB;
+
 SELECT 
     CategoryId as cid,
     CategoryName,

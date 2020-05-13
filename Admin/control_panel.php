@@ -82,6 +82,10 @@
                         include("location_control.php");break;
                     case 'others':
                         include("others_control.php");break;
+                    case 'editproduct':
+                        include("edit_section/edit_product.php");break;
+                    case 'editcategory':
+                        include("edit_section/edit_category.php");break;
                     default:
                         #code
                 }

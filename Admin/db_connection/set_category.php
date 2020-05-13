@@ -5,7 +5,11 @@
     
     $query = "INSERT INTO category SET CategoryName='$_POST[categoryname]', Description='$_POST[description]'";
 
-    mysqli_query($database,$query);
+    $ok = mysqli_query($database,$query);
 
-    header("Location: $backdir&msg=ok"); 
+    if($ok):
+        header("Location: $backdir&msg=okadd");
+    else:
+        header("Location: $backdir&msg=erroradd"); 
+    endif;  
 ?>

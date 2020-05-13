@@ -1,11 +1,22 @@
-<div class="mx-5" id="nav-categories" role="tabpanel" aria-labelledby="nav-categories-tab">
+<div class="container" id="nav-categories" role="tabpanel" aria-labelledby="nav-categories-tab">
     <h1 class="text-center my-3">Categorias</h1>
     <hr>
     <div class="text-center mt-3">
         <?php $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
-            if ($msg == 'ok') :
-                echo "<div class='alert alert-success'>Se registró la categoria con éxito</div>";
-            endif;
+            switch ($msg):
+                case 'okadd':
+                    echo "<div class='alert alert-success'>La categoría registró con éxito</div>";
+                    break;
+                case 'erroradd':
+                    echo "<div class='alert alert-danger'>Ocurrió un error al registrar la categoría</div>";
+                    break;
+                case 'okdel':
+                    echo "<div class='alert alert-success'>La categoría se eliminó correctamente</div>";
+                    break;
+                case 'errordel':
+                    echo "<div class='alert alert-danger'>Ocurrió un error al eliminar la categoría</div>";
+                    break;
+            endswitch;
         ?>
         <a class="btn my-btn" data-toggle="collapse" onclick="javascript:hide_show('Categoria',this);" data-target="#addproducts">Añadir Categoria</a>
         <div id="addproducts" class="collapse mt-3">
@@ -33,7 +44,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Nombre</th>
                     <th scope="col">Descripción</th>
-                    <th scope="col">Número de productos</th>
+                    <th class='text-center' scope="col">Cant. de productos</th>
                     
                 </tr>
             </thead>
@@ -43,12 +54,11 @@
                     <?php
                         echo "<th scope='row'>$categories[cid]</th>";
                         echo "<td>$categories[CategoryName]</td>";
-                        echo "<td>$categories[Description]</td>";
-                        echo "<td>$categories[amount_p]</td>";
+                        echo ($categories['Description'] == '') ? "<td>Sin descripción</td>" : "<td>$categories[Description]</td>";
+                        echo "<td class='text-center'>$categories[amount_p]</td>";
+                        echo "<td><a href='edit/edit_category.php?cid=$categories[cid]' class='icon_edit'><i class='icon-pencil'></i></a></td>";
+                        echo "<td><a href='db_connection/delete_category.php?cid=$categories[cid]' class='icon_delete'><i class='icon-cross'></i></a></td>";
                     ?>
-                    
-                    <td><a href="" class="icon_edit"><i class="icon-pencil"></i></a></td>
-                    <td><a href="" class="icon_delete"><i class="icon-cross"></i></a></td>
                 </tr>
                 <?php endwhile;?>
             </tbody>

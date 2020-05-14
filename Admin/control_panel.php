@@ -12,6 +12,13 @@
         from category; 
     ";
     $result_categories = mysqli_query($database,$get_categories);
+
+    $get_company = "SELECT * FROM company";
+
+    $result_company = mysqli_query($database,$get_company);
+
+    $company = mysqli_fetch_assoc($result_company);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

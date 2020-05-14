@@ -3,8 +3,7 @@
     $ProductId = isset($_GET['pid']) ? $_GET['pid'] : 'error';
 
     $get_product = "
-            SELECT 
-                p.ProductId,
+            SELECT
                 p.ProductName,
                 Description,
                 p.Amount,
@@ -22,8 +21,10 @@
 ?>
 
 <div class="container">
-    <h3 class="text-center my-5">Editar Producto</h3>
-    <form class="needs-validation text-left" action="db_connection/update_product.php" method="POST" novalidate>
+    <h1 class="text-center my-5">Editar Producto</h1>
+    <form class="needs-validation text-left" enctype='multipart/form-data' action="db_connection/update_product.php" method="POST" novalidate>
+        <?php echo "<input type='hidden' name='pid' id='pid' value='$ProductId'>";?>
+        
         <div class="form-row">
             <div class="form-group col-md-6">
                 <label for="nameproduct">Nombre:</label>
@@ -83,7 +84,7 @@
                 <span class="input-group-text">Imagen del Producto</span>
             </div>
             <div class="custom-file">
-                <input type="file" name="productimage" class="custom-file-input" id="productimage">
+                <input type="file" name="productimage" accept='image/jpeg,image/png' class="custom-file-input" id="productimage">
                 <label class="custom-file-label" for="productimage">Seleccionar Archivo</label>
             </div>
         </div>

@@ -58,3 +58,24 @@ SELECT
     Brands,
     Material  
 FROM product p;
+
+INSERT INTO company SET CompanyId = 1, 
+						CompanyName = 'Plásticos La 17', 
+                        PhoneNumber = '6 882 47 58', 
+                        MobileNumber = '+57 314 625 3419',
+                        Email = 'plasticosla17@gmail.com',
+                        AboutUs = 'Somos una empresa manizaleña fundada de 2019 por Carlos Mario,
+                        			a raiz de la experiencia familar en el campo de los desechables
+                                    sindo fabricantes de gran parte de nuestros productos de alli
+                                    la economía y calidad de nuestros productos',
+                        Mission = 'Impulsar la buena presentacion de nuestros alimentos y la organización
+                        			de los mismos, la comodidad de las personas al realizar sus fiestas
+                                    familiares con laa mayor simplicidad posible con el uso de productos
+                                    desechables',
+                        Vision = 'Formar una empresa con calidad humana que pueda vender a nivel Nacional
+                        			conservando la calidad de todos sus productos',
+                        Place = 'Calle 22 # 16 - 23 local 122',
+                        FrameLocation = '<iframe height="500px" width="1000px"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d993.5499803443171!2d-75.51832817080246!3d5.071320999769954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMDQnMTYuOCJOIDc1wrAzMScwNC4wIlc!5e0!3m2!1ses-419!2sco!4v1588109342729!5m2!1ses-419!2sco" 
+                    frameborder="0" allowfullscreen="true" aria-hidden="false" tabindex="0">
+                </iframe>';

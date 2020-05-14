@@ -7,13 +7,23 @@
             <button class="btn my-btn" id="editbtn">Editar</button>
         </div>
     </div>
-    <form class="proform" action="control_panel.php?view=contact" method="POST">
+    <?php $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
+        switch ($msg):
+            case 'okupd':
+                echo "<div class='alert alert-success'>La Información de contacto fue actualiazda correctamente</div>";
+                break;
+            case 'errorupd':
+                echo "<div class='alert alert-danger'>Ocurrió un error al actualizar la información de contacto</div>";
+                break;
+        endswitch;
+    ?>
+    <form class="proform" action="db_connection/update_contact.php" method="POST">
         <hr>
         <div class="form-group row">
             <label for="bussinessname" class="col-sm-3 col-form-label">Nombre de la empresa:</label>
             <div class="col-sm-9">
                 <?php
-                echo "<input type='text' class='form-control' id='bussinessname' value='Platicos La 17' disabled>";
+                echo "<input type='text' name='companyname' class='form-control' id='bussinessname' value='$company[CompanyName]' disabled>";
                 ?>
             </div>
         </div>
@@ -21,7 +31,7 @@
             <label for="phone_number" class="col-sm-3 col-form-label">Telefono Fijo:</label>
             <div class="col-sm-9">
                 <?php
-                echo "<input type='text' class='form-control' id='phone_number' value='036 882 47 58' disabled>";
+                echo "<input type='text' name='phonenumber' class='form-control' id='phone_number' value='$company[PhoneNumber]' disabled>";
                 ?>
             </div>
         </div>
@@ -29,7 +39,7 @@
             <label for="mobile_number" class="col-sm-3 col-form-label">Celular:</label>
             <div class="col-sm-9">
                 <?php
-                echo "<input type='text' class='form-control' id='mobile_number' value='+57 314 625 3419' disabled>";
+                echo "<input type='text' name='mobilenumber' class='form-control' id='mobile_number' value='$company[MobileNumber]' disabled>";
                 ?>
             </div>
         </div>
@@ -37,7 +47,7 @@
             <label for="mail" class="col-sm-3 col-form-label">Correo Electrónico:</label>
             <div class="col-sm-9">
                 <?php
-                echo "<input type='email' class='form-control' id='mail' value='plasticosla17@gmail.com' disabled>";
+                echo "<input type='email' name='mail' class='form-control' id='mail' value='$company[Email]' disabled>";
                 ?>
             </div>
         </div>

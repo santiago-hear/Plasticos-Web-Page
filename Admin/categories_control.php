@@ -16,6 +16,12 @@
                 case 'errordel':
                     echo "<div class='alert alert-danger'>Ocurrió un error al eliminar la categoría</div>";
                     break;
+                case 'okupd':
+                    echo "<div class='alert alert-success'>La categoria fue actualiazda correctamente</div>";
+                    break;
+                case 'errorupd':
+                    echo "<div class='alert alert-danger'>Ocurrió un error al actualizar la categoria</div>";
+                    break;
             endswitch;
         ?>
         <a class="btn my-btn" data-toggle="collapse" onclick="javascript:hide_show('Categoria',this);" data-target="#addproducts">Añadir Categoria</a>
@@ -56,7 +62,7 @@
                         echo "<td>$categories[CategoryName]</td>";
                         echo ($categories['Description'] == '') ? "<td>Sin descripción</td>" : "<td>$categories[Description]</td>";
                         echo "<td class='text-center'>$categories[amount_p]</td>";
-                        echo "<td><a href='edit/edit_category.php?cid=$categories[cid]' class='icon_edit'><i class='icon-pencil'></i></a></td>";
+                        echo "<td><a href='control_panel.php?view=editcategory&cid=$categories[cid]' class='icon_edit'><i class='icon-pencil'></i></a></td>";
                         echo "<td><a href='db_connection/delete_category.php?cid=$categories[cid]' class='icon_delete'><i class='icon-cross'></i></a></td>";
                     ?>
                 </tr>

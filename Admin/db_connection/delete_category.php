@@ -1,6 +1,5 @@
 <?php
     include("connection.php");
-    $backdir = $_SERVER["HTTP_REFERER"];
 
     $categoryId = isset($_GET['cid']) ? $_GET['cid'] : 'error';
 
@@ -9,8 +8,8 @@
     $ok = mysqli_query($database,$delete_category);
 
     if ($ok):
-        header("Location: http://localhost/Plasticos_la17/Admin/control_panel.php?view=categories&msg=delok");
+        header("Location: http://localhost/Plasticos_la17/Admin/control_panel.php?view=categories&msg=okdel");
     else:
-        header("Location: http://localhost/Plasticos_la17/Admin/control_panel.php?view=categories&msg=delerror");
+        header("Location: http://localhost/Plasticos_la17/Admin/control_panel.php?view=categories&msg=errordel");
     endif;
 ?>

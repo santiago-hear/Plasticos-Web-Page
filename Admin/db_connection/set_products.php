@@ -9,7 +9,7 @@
     $brand = isset($_POST['brand']) ? $_POST["brand"] : 'NULL'; 
     $material = isset($_POST['material']) ? $_POST["material"] : 'NULL';
 
-    $path = str_replace("\\","/",$_FILES['productimage']['tmp_name']);
+    $path = isset($_FILES['productimage']) ? str_replace("\\","/",$_FILES['productimage']['tmp_name']) : '';
 
     $name = $name != '' ? "'$name'" : 'NULL' ;
     $description = $description != '' ? "'$description'" : 'NULL' ;

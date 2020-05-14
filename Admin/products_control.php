@@ -33,6 +33,12 @@
                 case 'errordel':
                     echo "<div class='alert alert-danger'>Ocurrió un error al eliminar el producto</div>";
                     break;
+                case 'okupd':
+                    echo "<div class='alert alert-success'>El producto fue actualiazdo correctamente</div>";
+                    break;
+                case 'errorupd':
+                    echo "<div class='alert alert-danger'>Ocurrió un error al actualizar el producto</div>";
+                    break;
             endswitch;
         ?>
         <a class="btn my-btn" data-toggle="collapse" onclick="javascript:hide_show('Producto',this);" data-target="#addproducts">Añadir Producto</a>

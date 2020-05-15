@@ -1,16 +1,16 @@
 <?php
     include("connection.php");
 
-    $CompanyName = isset($_POST['companyname']) ? $_POST['companyname'] : NULL;
-    $Phone = isset($_POST['phonenumber']) ? $_POST['phonenumber'] : NULL;
-    $Mobile = isset ($_POST['mobilenumber']) ? $_POST['mobilenumber'] : NULL;
-    $Email = isset ($_POST['mail']) ? $_POST['mail'] : NULL;
+    $CompanyName = ($_POST['companyname'] != '') ? "'".$_POST['companyname']."'" : 'NULL';
+    $Phone = ($_POST['phonenumber'] != '') ? "'".$_POST['phonenumber']."'" : 'NULL';
+    $Mobile = ($_POST['mobilenumber'] != '') ? "'".$_POST['mobilenumber']."'" : 'NULL';
+    $Email = ($_POST['mail'] != '') ? "'".$_POST['mail']."'" : 'NULL';
     
     $update_company = "UPDATE company SET 
-                            CompanyName ='$CompanyName', 
-                            PhoneNumber ='$Phone',
-                            MobileNumber = '$Mobile',
-                            Email = '$Email'
+                            CompanyName =$CompanyName, 
+                            PhoneNumber =$Phone,
+                            MobileNumber = $Mobile,
+                            Email = $Email
                         WHERE CompanyId= 1";
 
     var_dump($update_company);

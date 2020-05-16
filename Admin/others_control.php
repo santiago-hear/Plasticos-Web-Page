@@ -1,16 +1,8 @@
 <?php
-    $msg= strip_tags("!Gracias por tu visita! <br>
-    Queremos darte lo mejor de nuestros productos, 
-    nuestra meta es garantizar tu satisfacción así 
-    que puedes crear una cuenta y dar el visto bueno 
-    a tu compra o si tienes dudas de tu compra, puedes
-    dejar tu mensaje y responderemos lo mas pronto posible.");
+    $msg= file_get_contents("../plain_text_files/welcomemsg.txt");
 
-
-    $wellcome_msg = <<<HTML
-    <textarea type='text' class='form-control' id='msg-text' cols='5' rows='5' disabled>
-        $msg
-    </textarea>
+    $welcome_msg = <<<HTML
+    <textarea type='text' name='msg' class='form-control' id='msg-text' cols='5' rows='5' disabled>$msg</textarea>
 HTML;
 ?>
 <div class="container px-5">
@@ -22,13 +14,14 @@ HTML;
             <button class="btn my-btn" id="editbtn">Editar</button>
         </div>
     </div>
-    <form class="proform" action="control_panel.php?view=contact" method="POST">
+    <?php echo (isset($_GET['msg'])) ? "<div class='alert alert-success'>La sección fue actualizada correctamente</div>" : "";?>
+    <form class="proform" action="edit_section/set_others.php" method="POST">
         <hr>
         <div class="form-group py-3">
             <label for="msg-text" class="col-form-label"><h4>Mensaje de bienvenida: </h4></label>
             <div class="">
                 <?php
-                echo $wellcome_msg;
+                echo $welcome_msg;
                 ?>
             </div>
         </div>

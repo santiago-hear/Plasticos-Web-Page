@@ -1,7 +1,7 @@
 <?php
     include("connection.php");
 
-    $CompanyName = ($_POST['companyname'] != '') ? "'".$_POST['companyname']."'" : 'NULL';
+    $CompanyName = ($_POST['companyname'] != '') ? utf8_decode("'".$_POST['companyname']."'") : 'NULL';
     $Phone = ($_POST['phonenumber'] != '') ? "'".$_POST['phonenumber']."'" : 'NULL';
     $Mobile = ($_POST['mobilenumber'] != '') ? "'".$_POST['mobilenumber']."'" : 'NULL';
     $Email = ($_POST['mail'] != '') ? "'".$_POST['mail']."'" : 'NULL';

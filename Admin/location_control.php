@@ -5,8 +5,7 @@
                         cp.CityId,
                         (SELECT StateId FROM City st WHERE st.CityId = cp.CityId) AS stid,
                         (SELECT StateName FROM State WHERE StateId = stid) AS state,
-                        (SELECT CityName FROM City cy WHERE cy.CityId = cp.CityId) AS city,
-                        cp.FrameLocation
+                        (SELECT CityName FROM City cy WHERE cy.CityId = cp.CityId) AS city
                     FROM company cp
                     WHERE CompanyId = 1";
 
@@ -23,7 +22,7 @@
     $stateid = $location['stid'];
     $address = $location['address'];
     $city = $location['CityId'];
-    $frame = utf8_encode($location['FrameLocation']);
+    $frame = file_get_contents("../plain_text_files/framelocation.txt");
     
 ?>
 <div class="container px-5">
@@ -38,10 +37,10 @@
     <?php $msg = isset($_GET['msg']) ? $_GET['msg'] : '';
         switch ($msg):
             case 'okupd':
-                echo "<div class='alert alert-success'>La Información de Conóncenos fue actualiazda correctamente</div>";
+                echo "<div class='alert alert-success'>La información de la ubicación fue actualiazda correctamente</div>";
                 break;
             case 'errorupd':
-                echo "<div class='alert alert-danger'>Ocurrió un error al actualizar la Información de Conóncenos</div>";
+                echo "<div class='alert alert-danger'>Ocurrió un error al actualizar la información de la ubicación</div>";
                 break;
         endswitch;
     ?>
@@ -103,10 +102,7 @@
         <div class="text-center mt-5">
             <h5>Ubicación Actual:</h5>
             <div>
-                <iframe height="500px" width="1000px"
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d993.5499803443171!2d-75.51832817080246!3d5.071320999769954!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMDQnMTYuOCJOIDc1wrAzMScwNC4wIlc!5e0!3m2!1ses-419!2sco!4v1588109342729!5m2!1ses-419!2sco" 
-                    frameborder="0" allowfullscreen="true" aria-hidden="false" tabindex="0">
-                </iframe>
+                <?php echo $frame;?>
             </div>
         </div>
     </form>

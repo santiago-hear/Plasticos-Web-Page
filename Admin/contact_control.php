@@ -21,10 +21,8 @@
         <hr>
         <div class="form-group row">
             <label for="bussinessname" class="col-sm-3 col-form-label">Nombre de la empresa:</label>
-            <div class="col-sm-9">
-                <?php
-                echo "<input type='text' name='companyname' class='form-control' id='bussinessname' value='$company[CompanyName]' disabled>";
-                ?>
+            <div class="col-sm-9"> 
+                <input type='text' name='companyname' class='form-control' id='bussinessname' value='<?php echo utf8_encode($company['CompanyName']);?>' disabled>
             </div>
         </div>
         <div class="form-group row">

@@ -81,3 +81,5 @@ INSERT INTO company SET CompanyId = 1,
                 </iframe>';
 
 ALTER TABLE company ADD COLUMN address VARCHAR(50);
+
+ALTER TABLE company DROP COLUMN FrameLocation;
